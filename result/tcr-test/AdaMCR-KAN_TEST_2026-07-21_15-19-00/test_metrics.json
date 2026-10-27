@@ -1,0 +1,21 @@
+{
+  "test_loss": 0.59074649380562,
+  "AUROC": 0.9420683287165282,
+  "AUPRC": 0.9147386092853499,
+  "score": 0.9284034690009391,
+  "ACC": 0.924436090225564,
+  "BACC": 0.8844611528822055,
+  "F1": 0.8418568056648308,
+  "MCC": 0.7938312667684166,
+  "sensitivity": 0.8045112781954887,
+  "specificity": 0.9644110275689223,
+  "precision": 0.8828382838283828,
+  "recall": 0.8045112781954887,
+  "threshold": 0.5,
+  "model_path": "/home/zqliudachen/Third_work_pmhc_tcr/TranspMHC-TransTCR/model/TransTCR/TransTCR_RUN_2026-07-20_23-12-35-TransTCR_train_mkan_ce_1to1_5fold/Best_model.pkl",
+  "loss_name": "cross_entropy",
+  "positive_count": 665,
+  "negative_count": 1995,
+  "positive_prevalence": 0.25,
+  "random_AUPRC_baseline": 0.25
+}
