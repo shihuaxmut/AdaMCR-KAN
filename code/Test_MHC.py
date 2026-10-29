@@ -36,21 +36,7 @@ DEFAULT_CONFIG_PATH = os.path.join(
     "config",
     "pMHC_test_niu_dataset.yaml",
 )
-# DEFAULT_CONFIG_PATH = os.path.join(
-#     PROJECT_ROOT,
-#     "config",
-#     "pMHC_test_mkan_fair.yaml",
-# )
-# DEFAULT_CONFIG_PATH = os.path.join(
-#     PROJECT_ROOT,
-#     "config",
-#     "pMHC_test_mkan_fair_second_dataset.yaml",
-# )
-# DEFAULT_CONFIG_PATH = os.path.join(
-#     PROJECT_ROOT,
-#     "config",
-#     "pMHC_test_mkan_fair_Anthem_dataset.yaml",
-# )
+
 def now_file_time():
     return datetime.now(LOCAL_TZ).strftime("%Y-%m-%d_%H-%M-%S")
 
