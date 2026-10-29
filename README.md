@@ -90,7 +90,7 @@ Before testing, verify the `DEFAULT_CONFIG_PATH` parameter in `Test_TCR.py` and 
 
 The datasets, model configurations, and experimental results associated with AdaMCR-KAN are available on Hugging Face:
 
-[**AdaMCR-KAN Results and Data Repository**](https://huggingface.co/datasets/thechen/AdaMCR-KAN-result/tree/main/data)
+[**AdaMCR-KAN Results and Data Repository**](https://huggingface.co/datasets/thechen/AdaMCR-KAN-result/tree/main)
 
 Please refer to this repository for the relevant datasets, model parameter configurations, and experimental results.
 
