@@ -1,0 +1,70 @@
+experiment:
+  name: AdaMCR-KAN
+  description: Train TCR with AdaMCR-KAN model
+  tags:
+    - AdaMCR-KAN
+    - train
+    - CrossEntropyLoss
+
+data:
+  pos_tcr_pmhc: ../data/pmhc_tcr_train_pos.csv
+  neg_tcr_pmhc: ../data/pmhc_tcr_train_neg.csv
+  tcr_test: ../data/pmhc_tcr_test.csv
+  vocab: vocab_dict.npy
+  pep_max_len: 25
+  hla_max_len: 34
+  tcr_max_len: 27
+
+train:
+  batch_size: 1024
+  epochs: 1000
+  learning_rate: 0.001
+  weight_decay: 1.0e-06
+  grad_clip: 1.0
+
+  k_folds: 5
+  max_folds: 5
+  seed: 42
+
+  pos_repeat: 1
+  train_neg_ratio: 1
+  val_neg_ratio: 1
+  dynamic_negative_sampling: true
+  allow_negative_replacement: true
+  num_workers: 0
+
+loss:
+  name: cross_entropy
+  class0_weight: 1.0
+  class1_weight: 1.0
+  label_smoothing: 0.0
+  l2_weight: 0.0
+
+scheduler:
+  patience: 6
+  cooldown: 1
+  min_lr: 1.0e-05
+  factor: 0.5
+
+early_stopping:
+  patience: 15
+  delta: 0.0001
+
+checkpoint:
+  period: 1
+
+model:
+  module_name: AdaMCR-KAN
+  pmhc_model_path: /home/AdaMCR-KAN/model/MHC/AdaMCR-KAN_RUN_2026-07-17_22-05-27-niu-dataset/Best_model.pkl
+
+  d_model: 192
+  d_k: 64
+  d_v: 64
+  n_layers: 2
+  n_heads: 8
+  dropout: 0.1
+  mkan_order: 3
+  cnn_kernel_size: 3
+
+eval:
+  threshold: 0.5
