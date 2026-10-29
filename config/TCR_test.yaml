@@ -1,0 +1,43 @@
+experiment:
+  name: AdaMCR-KAN
+  description: Test one manually specified CE TCR Best_model.pkl
+
+data:
+  tcr_test: ../data/pmhc_tcr_test.csv
+  vocab: vocab_dict.npy
+  pep_max_len: 25
+  hla_max_len: 34
+  tcr_max_len: 27
+
+model:
+  pkl_path: /home/AdaMCR-KAN/model/TCR/AdaMCR-KAN_RUN_2026-07-20_23-12-35/Best_model.pkl
+  pmhc_model_path: /home/AdaMCR-KAN/model/MHC/AdaMCR-KAN_RUN_2026-07-17_22-05-27-niu-dataset/Best_model.pkl
+
+  d_model: 192
+  d_ff: 512
+  d_k: 64
+  d_v: 64
+  n_layers: 2
+  n_heads: 8
+  dropout: 0.1
+  mkan_order: 3
+  cnn_kernel_size: 3
+
+  freeze_pmhc: true
+  strict_pmhc_load: true
+
+loss:
+  name: cross_entropy
+  class0_weight: 1.0
+  class1_weight: 1.0
+
+test:
+  batch_size: 1024
+
+  threshold: 0.5
+
+  strict_load: true
+  random_seed: 42
+
+  output_dir: ../result/tcr-test
+  output_name: test_predictions.csv
