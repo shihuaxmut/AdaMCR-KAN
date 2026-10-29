@@ -100,7 +100,13 @@ Please refer to this repository for the relevant datasets, model parameter confi
 - **Configuration consistency:** Ensure that the configuration files specify the correct datasets, model checkpoints, and output directories before running each script.
 - **Execution order:** Train and evaluate the MHC-I binding prediction model first, then train and evaluate the TCR–pMHC-I recognition model, following the corresponding configuration requirements.
 - **Working directory:** Run the commands from the `code` directory unless the scripts explicitly support another working directory.
+- **Command-line arguments:** The training scripts support command-line arguments for specifying dataset paths, allowing users to override the corresponding paths in the configuration file when supported by the script. For example, to train the TCR–pMHC-I recognition model with custom datasets:
 
+  ```bash
+  python Train_TCR.py -pos ../data/pmhc_tcr_train_pos.csv -neg ../data/pmhc_tcr_train_neg.csv -d ../data/pmhc_tcr_test.csv
+  ```
+
+  Here, `-pos` specifies the positive training samples, `-neg` specifies the negative training samples, and `-d` specifies the test dataset. Please ensure that the provided paths are valid relative to the current working directory.
 
 ## Abstract
 TCR–pMHC-I recognition is governed by intricate residue-wise cross-molecular interactions and sequence dependencies, and the extreme polymorphism of HLA-I molecules brings great difficulty to accurate prediction. We propose AdaMCR-KAN, a KAN-based model for TCR–pMHC-I recognition prediction. It uses a hierarchical residue interaction encoder (HRIEncoder) to extract multi-level sequence features, bidirectional cross-attention with adaptive head gating, and a novel cross-interaction gating (CIG) module to dynamically filter redundant interactions and emphasize key binding patterns. Benchmark results show AdaMCR-KAN achieves superior performance and strong generalization across diverse peptides, HLA alleles and test scenarios. Further motif analysis and saturation mutagenesis validation confirm the model learns biologically meaningful residue binding preferences.
