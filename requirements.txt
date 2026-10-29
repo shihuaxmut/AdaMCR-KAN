@@ -1,0 +1,38 @@
+# AdaMCR-KAN Python environment
+# Recommended environment:
+#   conda create -n AdaMCR_KAN python=3.11 -y
+#   conda activate AdaMCR_KAN
+#   python -m pip install --upgrade pip
+#   python -m pip install -r requirements.txt
+#
+# PyTorch CUDA 11.8 wheels
+--extra-index-url https://download.pytorch.org/whl/cu118
+
+torch==2.4.0+cu118
+torchvision==0.19.0+cu118
+torchaudio==2.4.0+cu118
+
+# Core scientific computing
+numpy==1.26.4
+scipy==1.17.1
+pandas==3.0.3
+scikit-learn==1.9.0
+networkx==3.6.1
+sympy==1.14.0
+
+# Deep learning / sequence modeling
+transformers==4.36.2
+tokenizers==0.15.2
+huggingface-hub==0.36.2
+safetensors==0.8.0
+einops==0.8.2
+
+# Utilities, logging, and visualization
+matplotlib==3.11.1
+tqdm==4.68.4
+PyYAML==6.0.3
+openpyxl==3.1.5
+XlsxWriter==3.2.9
+Pillow==12.2.0
+requests==2.34.2
+regex==2026.6.28
